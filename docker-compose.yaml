@@ -2,7 +2,7 @@ version: '3.8'
 services:
   database_mongo:
     image: mongo:6.0
-    container_name: banco_de_dados_python_mongo
+    container_name: banco_de_dados_python_mongo_app1
     ports:
       - 27017:27017
     volumes:
