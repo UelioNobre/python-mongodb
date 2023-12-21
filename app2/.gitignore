@@ -1,2 +1,4 @@
 volume-database
+.DS_Store
 .venv/
+assets
