@@ -5,11 +5,17 @@
 docker compose -f "docker-compose.yaml" up -d --build
 ```
 
-## Executando máquina virtual Python
+## Executando ambiente virtual Python
 ```bash
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 ```
+
+## Encerrar ambiente virtual Python
+```bash
+$ deactivate
+```
+
 
 ## Exportando dependencias utilizadas com freeze
 ```bash
