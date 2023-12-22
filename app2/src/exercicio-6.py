@@ -14,6 +14,7 @@ with MongoClient() as client:
         "host.host_name": True,
         "host.host_location": True,
     }
+    sort = [("host.host_name", 1), ("host.host_location", 1)]
 
-    for document in db.listing.find(query, projection):
+    for document in db.listing.find(query, projection, sort=sort):
         print(document)
