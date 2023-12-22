@@ -12,8 +12,10 @@ with MongoClient() as client:
     db = client.project
 
     query = {
-        "number_of_reviews": {"$gt": 300},
-        "review_scores.review_scores_rating": {"$gte": 95},
+        "$or": [
+            {"number_of_reviews": {"$gt": 300}},
+            {"review_scores.review_scores_rating": {"$gte": 95}},
+        ]
     }
 
     projection = {
@@ -24,7 +26,8 @@ with MongoClient() as client:
 
     sort = [
         ("number_of_reviews", -1),
-        ("review_scores.review_scores_rating", 1),
+        ("review_scores.review_scores_rating", -1),
+        ("name", 1),
     ]
 
     for document in db.listing.find(query, projection, sort=sort).limit(500):
