@@ -10,7 +10,7 @@ with MongoClient() as client:
 
     query = {"price": {"$gt": 155, "$lt": 200}}
     projection = {"name": True, "price": True}
-    sort = [("price", -1), ("name", 1)]
+    sort = [("price", 1), ("name", 1)]
 
     for document in db.listing.find(query, projection, sort=sort):
         print(document)
