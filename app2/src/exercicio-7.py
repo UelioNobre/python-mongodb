@@ -16,12 +16,6 @@ with MongoClient() as client:
             {"number_of_reviews": {"$gte": 500}},
         ]
     }
-    query = {
-        "$and": [
-            {"host.host_is_superhost": True},
-            {"number_of_reviews": {"$gte": 500}},
-        ]
-    }
     projection = {
         "name": True,
         "summary": True,
