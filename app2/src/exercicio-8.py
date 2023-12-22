@@ -10,7 +10,7 @@ with MongoClient() as client:
 
     query = {
         "amenities": {
-            "$in": ["Pets allowed"],
+            "$all": ["Pets allowed"],
         }
     }
     projection = {
